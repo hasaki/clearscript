@@ -70,9 +70,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ClearScript Library")]
 [assembly: AssemblyProduct("ClearScript")]
 [assembly: AssemblyCopyright("(c) Microsoft Corporation")]
-[assembly: InternalsVisibleTo("ClearScriptV8-32")]
-[assembly: InternalsVisibleTo("ClearScriptV8-64")]
-[assembly: InternalsVisibleTo("ClearScriptTest")]
+[assembly: InternalsVisibleTo("ClearScriptV8-32, PublicKey=<#= v8PublicKey #>")]
+[assembly: InternalsVisibleTo("ClearScriptV8-64, PublicKey=<#= v8PublicKey #>")]
+[assembly: InternalsVisibleTo("ClearScriptTest, PublicKey=<#= publicKey #>")]
 
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("<#= version #>")]

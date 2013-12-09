@@ -185,6 +185,19 @@ namespace Microsoft.ClearScript.V8
                     yield return dirPath;
                 }
             }
+
+	        var targets = new[] { EnvironmentVariableTarget.Machine, EnvironmentVariableTarget.User, };
+	        foreach (var target in targets)
+	        {
+		        var envPath = Environment.GetEnvironmentVariable("PATH", target);
+		        if (!string.IsNullOrWhiteSpace(envPath))
+		        {
+			        foreach (var dirPath in envPath.Split(new [] {';'}, StringSplitOptions.RemoveEmptyEntries))
+			        {
+				        yield return dirPath;
+			        }
+		        }
+	        }
         }
 
         #region IDisposable implementation (abstract)
