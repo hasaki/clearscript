@@ -192,7 +192,7 @@ namespace Microsoft.ClearScript.V8
 		        var envPath = Environment.GetEnvironmentVariable("PATH", target);
 		        if (!string.IsNullOrWhiteSpace(envPath))
 		        {
-			        foreach (var dirPath in envPath.Split(new [] {';'}, StringSplitOptions.RemoveEmptyEntries))
+			        foreach (var dirPath in envPath.Split(new [] {Path.PathSeparator}, StringSplitOptions.RemoveEmptyEntries))
 			        {
 				        yield return dirPath;
 			        }
